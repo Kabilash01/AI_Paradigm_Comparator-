@@ -233,8 +233,11 @@ def generative_ai(query):
     keywords = set(specific_keywords(query))
     relevant = [e for e in KNOWLEDGE_BASE if e["tags"] & keywords]
     others = [e for e in KNOWLEDGE_BASE if e not in relevant]
-    pool = relevant + random.sample(others, 2)
-    chosen = random.sample(pool, random.choice([2, 3]))
+    pool = relevant + random.sample(others, min(2, len(others)))
+    # An off-topic query has no relevant entries, so the pool can be
+    # smaller than 3: never ask for more fragments than it holds.
+    size = min(random.choice([2, 3]), len(pool))
+    chosen = random.sample(pool, size)
     parts = [chosen[0]["text"]]
     for entry in chosen[1:]:
         connector = random.choice(CONNECTORS)
