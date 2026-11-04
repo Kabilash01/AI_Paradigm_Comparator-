@@ -1,0 +1,56 @@
+AI PARADIGM COMPARATOR
+Rules: 9 | Knowledge base: 16 entries
+
+======================================================================
+Query: 'What is machine learning?'
+[Traditional AI] Machine learning is a branch of AI where systems learn patterns from data instead of being explicitly programmed.
+[Generative AI] Machine learning powers spam filters, recommendations and fraud detection. Moreover, regularization methods such as dropout and weight decay reduce overfitting.
+[Agentic AI]
+Iteration 1: searching ['machine'] (exact)
+  -> Found 3 matches. Sufficient!
+Synthesized: Machine learning lets computers improve at a task by learning patterns from data. Machine learning algorithms are trained on examples and then tested on data they have never seen. Machine learning powers spam filters, recommendations and fraud detection.
+
+======================================================================
+Query: 'What is overfitting?'
+[Traditional AI] Overfitting is when a model memorizes training data, noise included, and then performs poorly on new unseen data.
+[Generative AI] Transformers use self-attention to weigh the relevance of every word in a sequence. Moreover, gradient descent minimizes a loss function by repeatedly stepping against the gradient.
+[Agentic AI]
+Iteration 1: searching ['overfitting'] (exact)
+  -> Found 1 match. Not enough, broadening...
+Iteration 2: searching ['overfitting', 'generalization', 'regularization', 'dropout'] (exact)
+  -> Found 2 matches. Sufficient!
+Synthesized: Overfitting happens when a model memorizes the training set and fails to generalize to new data. Regularization methods such as dropout and weight decay reduce overfitting.
+
+======================================================================
+Query: 'Explain deep learning'
+[Traditional AI] No match found
+[Generative AI] Machine learning powers spam filters, recommendations and fraud detection. Furthermore, deep learning uses neural networks with many hidden layers to learn complex features automatically.
+[Agentic AI]
+Iteration 1: searching ['deep'] (exact)
+  -> Found 1 match. Not enough, broadening...
+Iteration 2: searching ['deep', 'learning', 'neural', 'layers', 'networks'] (exact)
+  -> Found 4 matches. Sufficient!
+Synthesized: Deep learning uses neural networks with many hidden layers to learn complex features automatically. A neural network stacks layers of artificial neurons that transform inputs step by step. Neural networks learn by backpropagation, adjusting weights to reduce prediction error.
+
+======================================================================
+Query: 'How do neural networks learn from data?'
+[Traditional AI] No match found
+[Generative AI] A neural network stacks layers of artificial neurons that transform inputs step by step. Furthermore, neural networks learn by backpropagation, adjusting weights to reduce prediction error. Also, computer vision teaches machines to recognize objects and scenes in images and video.
+[Agentic AI]
+Iteration 1: searching ['neural', 'networks', 'learn', 'data'] (exact)
+  -> Found 2 matches. Sufficient!
+Synthesized: A neural network stacks layers of artificial neurons that transform inputs step by step. Neural networks learn by backpropagation, adjusting weights to reduce prediction error.
+
+Generative AI variation for 'What is machine learning?':
+  Run 1: Machine learning lets computers improve at a task by learning patterns from data. Moreover, machine learning powers spam filters, recommendations and fraud detection. In addition, unsupervised learning discovers clusters and structure in data without labels.
+  Run 2: Machine learning algorithms are trained on examples and then tested on data they have never seen. Notably, deep learning uses neural networks with many hidden layers to learn complex features automatically. Moreover, machine learning powers spam filters, recommendations and fraud detection.
+  Run 3: Machine learning algorithms are trained on examples and then tested on data they have never seen. In addition, machine learning powers spam filters, recommendations and fraud detection.
+
+COMPARISON TABLE
+Query                                     | Traditional | Generative | Agentic
+------------------------------------------------------------------------------
+What is machine learning?                 | HIT         | OK         | OK (1 iter)
+What is overfitting?                      | HIT         | WEAK       | OK (2 iter)
+Explain deep learning                     | MISS        | OK         | OK (2 iter)
+How do neural networks learn from data?   | MISS        | OK         | OK (1 iter)
+

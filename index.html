@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Paradigm Comparator</title>
+  <!-- stlite: Streamlit running in the browser via Pyodide (no server). -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@stlite/browser@1.12.0/build/stlite.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module">
+    import { mount } from
+      "https://cdn.jsdelivr.net/npm/@stlite/browser@1.12.0/build/stlite.js";
+
+    // Load the same app.py and paradigm_comparator.py served next to
+    // this page, so the web app never duplicates the Python logic.
+    mount(
+      {
+        entrypoint: "app.py",
+        requirements: [],
+        files: {
+          "app.py": { url: "app.py" },
+          "paradigm_comparator.py": { url: "paradigm_comparator.py" },
+        },
+      },
+      document.getElementById("root"),
+    );
+  </script>
+</body>
+</html>
